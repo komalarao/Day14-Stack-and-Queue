@@ -1,12 +1,14 @@
 package com.bridgelabz.stackAndQueue;
 
 public class LinkedList {
-	Node head; 
+	Node head; // head of list
 
-	
+	/*
+	 * linked list node
+	 */
 	class Node {
 		Object data;
-		Node ref; // reference to next node
+		Node ref; // reference to next object in the sequence
 
 		Node(Object data) {
 			this.data = data;
@@ -14,7 +16,7 @@ public class LinkedList {
 	}
 
 	/*
-	 * Adding to linked list
+	 * Adding to linked list if the linked list empty then make the new node as head
 	 */
 	public void peakLast(Object data) {
 		Node newNode = new Node(data);
@@ -31,9 +33,11 @@ public class LinkedList {
 		}
 	}
 
-	/*
-	 * Display elements of linkedList
-	 */
+	// Delete position
+	public void popFirst() {
+		head = head.ref;
+	}
+
 	public void display() {
 		Node temp = head;
 		if (head == null)
